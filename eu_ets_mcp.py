@@ -14,7 +14,7 @@ Nothing is fetched while serving: the tools read the local cache (built from
 the bundled snapshot on first use, or by `eu-ets refresh`).
 
 Client config (Claude Code):
-  claude mcp add eu-ets -- uvx eu-ets-mcp
+  claude mcp add eu-ets -- uvx --from git+https://github.com/Keremozdemirra/eu-ets-mcp eu-ets-mcp
 """
 from __future__ import annotations
 

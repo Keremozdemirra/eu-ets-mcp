@@ -114,20 +114,27 @@ year  verified t CO2e  free allocation  surrendered  excluded  compliance
 
 ## Install
 
-As an MCP server in Claude Code:
+Nothing is published to PyPI; every install runs straight from GitHub. As an MCP server in Claude Code:
 
 ```bash
-claude mcp add --transport stdio eu-ets -- uvx eu-ets-mcp
+claude mcp add --transport stdio eu-ets -- uvx --from git+https://github.com/Keremozdemirra/eu-ets-mcp eu-ets-mcp
 ```
 
-Any MCP client can start it the same way: the command is `uvx eu-ets-mcp` (or `pipx run eu-ets-mcp`),
+Any MCP client can start it the same way: the command is `uvx --from git+https://github.com/Keremozdemirra/eu-ets-mcp eu-ets-mcp`,
 stdio transport, no arguments, no keys.
 
 The command line, without installing:
 
 ```bash
-uvx --from eu-ets-mcp eu-ets top --country DE --activity steel
-pipx run --spec eu-ets-mcp eu-ets lei 529900FGOWZKLBZ81V67
+uvx --from git+https://github.com/Keremozdemirra/eu-ets-mcp eu-ets top --country DE --activity steel
+uvx --from git+https://github.com/Keremozdemirra/eu-ets-mcp eu-ets lei 529900FGOWZKLBZ81V67
+```
+
+To install it instead: `pipx install git+https://github.com/Keremozdemirra/eu-ets-mcp` or `pip install git+https://github.com/Keremozdemirra/eu-ets-mcp`, which put `eu-ets` and `eu-ets-mcp`
+on the path. From a checkout:
+
+```bash
+git clone https://github.com/Keremozdemirra/eu-ets-mcp && cd eu-ets-mcp && pip install .
 ```
 
 Standard library only, Python 3.9 or later. The package carries a dated snapshot of the registry
@@ -135,7 +142,7 @@ Standard library only, Python 3.9 or later. The package carries a dated snapshot
 To replace it with today's registry files:
 
 ```bash
-uvx --from eu-ets-mcp eu-ets refresh
+uvx --from git+https://github.com/Keremozdemirra/eu-ets-mcp eu-ets refresh
 ```
 
 On 2026-09-24 a refresh from here downloaded 11,693,610 bytes in six files and took 23 to 30 seconds.
