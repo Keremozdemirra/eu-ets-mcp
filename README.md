@@ -256,7 +256,7 @@ Never read: the account label, the holder's address, postcode and city, account 
 installation's street address and postcode, the EPER id. There is no name search for companies;
 use the LEI or the installation name.
 
-**Withheld names.** This is the tool's own rule, not the source's. An installation name is shown as
+**Withheld names.** This rule is the tool's own. An installation name is shown as
 `[name withheld: possible natural person]`, and its city and account-holder LEI are left out, for
 any of these reasons; the counts are for the snapshot of 2026-09-24:
 
@@ -329,4 +329,4 @@ It is not the Union Registry and not an official publication: it is a copy of pu
 extracts with some columns left out and some sums added, as of the snapshot date it states. It is
 information from a public register, not legal advice; the binding acts are Directive 2003/87/EC and
 Regulation (EU) 2019/1122. It says nothing about who operated an installation in past years, and it
-does not judge any operator: a compliance code or a ranking is the registry's record, not a finding.
+does not judge any operator: a compliance code or a ranking is the registry's record.
